@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>자바스크립트 문법 연습하기!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <style>
+    .button-part {
+      display: flex;
+      height: 50px;
+    }
+  </style>
+  <script>
+    /*function checkResult() {
+      let a = ["사과", "배", " 감", "귤"];
+      //$("#q1").text(a); //id 값을 q1으로 지정한 것을 text 매소드를 통해 값을 입력을 헀을 때에 사과로 바꿔줌
+
+      $("#q1").css("color", "red"); //css 색갈을 바꿔줌
+      let b = { name: "영수", age: 30 };
+      $("#q2").text(b["name"]);
+
+      let c = [
+        { name: "영수", age: 35 },
+        { name: "철수", age: 30 },
+      ];
+      $("#q3").text(c[0]["age"]);
+    }*/
+
+    let ages = [12, 15, 20, 25, 17, 37, 24];
+
+    ages.forEach((a) => {
+      if (a > 20) {
+        console.log("성인입니다.");
+      } else {
+        console.log("청소년입니다.");
+      }
+    });
+  </script>
+
+  <body>
+    <div class="top-part">
+      <h1>자바스크립트 문법 연습하기!</h1>
+    </div>
+    <hr />
+    <br />
+    <h2>1. 함수</h2>
+    <div class="button-part">
+      <button onclick="checkResult()">결과 확인하기!</button>
+    </div>
+    <div class="list-part">
+      <h2>2. 리스트</h2>
+      <div id="q1">test</div>
+    </div>
+    <div class="dict-part">
+      <h2>3. 딕셔너리</h2>
+      <div id="q2">test</div>
+    </div>
+    <div>
+      <h2>4. 리스트 딕셔너리</h2>
+      <div id="q3">test</div>
+    </div>
+  </body>
+</html>
