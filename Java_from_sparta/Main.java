@@ -1,21 +1,33 @@
-package org.example;
-
-
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        int number = 10;
-        int result;
-        for(int i =10 ;i >=0; i--){
-            try{
-                result = number /i;
-                System.out.println(result);
-            }catch (Exception e){
-                System.out.println("Exception: " +e.getMessage());
-            }finally {
-                System.out.println("final always get called");
-            }
-        }
+        // LG TV 구현체를 조작
+        MultiRemoteController mrc = new LgTv("LG");
+        mrc.turnOnOff();
+        mrc.volumeUp();
+        mrc.channelDown();
+        mrc.channelUp();
+        mrc.turnOnOff();
+        // 조작 대상을 Samsung TV로 교체
+        System.out.println("\n<Samsung TV로 교체>");
+        mrc = new SamsungTv("Samsung");
+        mrc.turnOnOff();
+        mrc.channelUp();
+        mrc.volumeDown();
+        mrc.volumeUp();
+        mrc.turnOnOff();
 
+        System.out.println("\n<매개변수, 반환타입 다형성 체크>");
+        MultiRemoteController samsung = mrc.getTV(new SamsungTv("Samsung"));
+        samsung.turnOnOff();
+        SamsungTv samsungTv = (SamsungTv) samsung;
+        samsungTv.turnOnOff();
+        System.out.println();
+        MultiRemoteController lg = mrc.getTV(new LgTv("LG"));
+        lg.turnOnOff();
+        LgTv lgTv = (LgTv) lg;
+        lgTv.turnOnOff();
 
     }
 }
