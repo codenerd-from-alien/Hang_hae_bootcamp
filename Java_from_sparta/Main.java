@@ -1,11 +1,15 @@
-package calc;
+package try_catch;
 
 public class Main {
-    public static void main(String[] args) {
-        Calculator calculator = new Calculator(new AddOperation(), new SubstractOperation(),
-                new MultiplyOperation(), new DivideOperation());
-        System.out.println(calculator.calculate("+", 10, 20));
-        System.out.println(calculator.calculate("*", 10, 20));
 
+    public static void main(String[] args) {
+        boolean calculateEnded = false;
+         while (!calculateEnded){
+            try{
+                calculateEnded= CalculatorApp.start();// calapp 클래스 메소드에 접근해서 호출
+            }catch (Exception ex){ //
+                System.out.println(ex.getMessage());// 만약 위의 함수에서 오류 발생시에 ex함
+            }
+        }
     }
 }
